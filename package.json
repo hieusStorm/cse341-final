@@ -1,0 +1,30 @@
+{
+  "name": "cse341-final",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hieusStorm/cse341-final.git"
+  },
+  "author": "Hyrum Wines",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hieusStorm/cse341-final/issues"
+  },
+  "homepage": "https://github.com/hieusStorm/cse341-final#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.15.0",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "validatorjs": "^3.22.1"
+  }
+}
