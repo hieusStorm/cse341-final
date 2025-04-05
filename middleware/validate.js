@@ -25,13 +25,15 @@ const saveMonster = (req, res, next) => {
 const saveWeapon = (req, res, next) => {
     const elementTypes = ['fire', 'water', 'thunder', 'ice', 'dragon', 'poison', 'paraylis', 'blast', 'sleep'];
     const damageTypes = ['slash', 'impact', 'shot'];
+    const weaponTypes = ['great sword', 'long sword', 'sword and shield', 'dual blades', 'hammer', 'hunting horn', 'lance', 'gunlance', 'switch axe', 'charge blade', 'insect glaive', 'light bowgun', 'heavy bowgun', 'bow'];
+
     const validationRule = {
         name: "required|string",
         elementType: {inclusion: elementTypes},
         elementValue: "required|integer",
         damageType: {inclusion: damageTypes},
         attackValue: "required|integer",
-        weaponType: "required|string",
+        weaponType: {inclusion: weaponTypes},
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if(!status) {
