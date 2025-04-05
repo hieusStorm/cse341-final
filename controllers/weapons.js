@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res) => {
     //#swagger.tags['Weapons']
 
-    const result = await mongodb.getDb().db().collection('weapons');
+    const result = await mongodb.getDb().db().collection('weapons').find();
     result.toArray().then((weapons) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(weapons);

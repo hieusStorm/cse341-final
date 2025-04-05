@@ -11,11 +11,11 @@ POST  http://localhost:3000/monsters http/1.1
 Content-Type: application/json
 
 {
-    "name": "Rath",
-    "elementWeakness": "dragon",
+    "name": "Mizutsune",
+    "elementWeakness": "thunder",
     "weakSpot": "head",
-    "damageTypeWeak": "impact",
-    "type": "Flying Wyvern"
+    "damageTypeWeak": "slash",
+    "type": "Leviathan"
 }
 
 ### Update Monster
