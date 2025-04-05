@@ -1,0 +1,36 @@
+#/// localhost
+### Monsters
+### Get All monsters
+GET  http://localhost:3000/monsters
+
+### Get Monster by ID
+GET  http://localhost:3000/monsters/67f15ad91745002f3dabfb8a
+
+### Create Monster
+POST  http://localhost:3000/monsters http/1.1
+Content-Type: application/json
+
+{
+    "name": "Rath",
+    "elementWeakness": "dragon",
+    "weakSpot": "head",
+    "damageTypeWeak": "impact",
+    "type": "Flying Wyvern"
+}
+
+### Update Monster
+PUT http://localhost:3000/monsters/67f15adf1745002f3dabfb8b
+Content-Type: application/json
+
+{
+    "name": "Rathian",
+    "elementWeakness": "dragon",
+    "weakSpot": "head",
+    "damageTypeWeak": "impact",
+    "type": "Flying Wyvern"
+}
+
+### Delete a Monster
+DELETE http://localhost:3000/monsters/67f15a581745002f3dabfb89
+
+### Weapons

@@ -4,6 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 // functions
 const getAll = async (req, res) => {
+    //#swagger.tags['Builds']
     const result = await mongodb.getDb().db().collection('builds');
     result.toArray().then((builds) => {
         res.setHeader('Content-Type', 'application/json');
@@ -14,6 +15,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags['Builds']
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must us a valid build ID to find');
     }
@@ -26,6 +28,8 @@ const getSingle = async (req, res) => {
 };
 
 const createBuild = async (req, res) => {
+    //#swagger.tags['Builds']
+
     const build = {
         name: req.body.name,
         elementWeakness: req.body.elementWeakness,
@@ -44,6 +48,8 @@ const createBuild = async (req, res) => {
 };
 
 const updateBuild = async (req, res) => {
+    //#swagger.tags['Builds']
+
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid build Id to update');
     } 
@@ -68,6 +74,8 @@ const updateBuild = async (req, res) => {
 };
 
 const deleteBuild = async (req, res) => {
+    //#swagger.tags['Builds']
+
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid build ID to delete.');
     }

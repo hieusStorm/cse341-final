@@ -3,6 +3,8 @@ const ObjectId = require('mongodb').ObjectId;
 
 // functions
 const getAll = async (req, res) => {
+    //#swagger.tags['Weapons']
+
     const result = await mongodb.getDb().db().collection('weapons');
     result.toArray().then((weapons) => {
         res.setHeader('Content-Type', 'application/json');
@@ -13,6 +15,8 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags['Weapons']
+
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must us a valid weapon ID to find');
     }
@@ -25,6 +29,8 @@ const getSingle = async (req, res) => {
 };
 
 const createWeapon = async (req, res) => {
+    //#swagger.tags['Weapons']
+
     const weapon = {
         name: req.body.name,
         elementType: req.body.elementType,
@@ -44,6 +50,8 @@ const createWeapon = async (req, res) => {
 };
 
 const updateWeapon = async (req, res) => {
+    //#swagger.tags['Weapons']
+
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid weapon Id to update');
     } 
@@ -69,6 +77,8 @@ const updateWeapon = async (req, res) => {
 };
 
 const deleteWeapon = async (req, res) => {
+    //#swagger.tags['Weapons']
+    
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid weapon ID to delete.');
     }

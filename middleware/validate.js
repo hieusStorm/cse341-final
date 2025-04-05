@@ -1,12 +1,13 @@
 const validator = require("../helpers/validate");
 
 const saveMonster = (req, res, next) => {
-    const elements = ['fire', 'water', 'thunder', 'ice'];
+    const elements = ['fire', 'water', 'thunder', 'ice', 'dragon'];
+    const damageTypes = ['slash', 'impact', 'shot'];
     const validationRule = {
         name: "required|string",
         elementWeakness: {inclusion: elements},
         weakSpot: "required|string",
-        damageTypeWeak: "required|string",
+        damageTypeWeak: {inclusion: damageTypes},
         type: "required|string"
     };
     validator(req.body, validationRule, {}, (err, status) => {

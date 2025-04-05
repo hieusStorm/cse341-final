@@ -4,6 +4,8 @@ const ObjectId = require('mongodb').ObjectId;
 
 // functions
 const getAll = async (req, res) => {
+    //#swagger.tags['Users']
+
     const result = await mongodb.getDb().db().collection('users');
     result.toArray().then((users) => {
         res.setHeader('Content-Type', 'application/json');
@@ -14,6 +16,8 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags['Users']
+
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must us a valid user ID to find');
     }
@@ -26,6 +30,8 @@ const getSingle = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
+    //#swagger.tags['Users']
+
     const user = {
         name: req.body.name,
         elementWeakness: req.body.elementWeakness,
@@ -44,6 +50,8 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
+    //#swagger.tags['Users']
+
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid user Id to update');
     } 
@@ -68,6 +76,8 @@ const updateUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
+    //#swagger.tags['Users']
+    
     if(!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid user ID to delete.');
     }

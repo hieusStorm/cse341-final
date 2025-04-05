@@ -1,5 +1,7 @@
 const router = require("express").Router();
 
+router.use("/", require("./swagger"));
+
 router.use("/monsters", require("./monsters"));
 router.use("/builds", require("./builds"));
 router.use("/weapons", require("./weapons"));
