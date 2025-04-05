@@ -39,32 +39,33 @@ DELETE http://localhost:3000/monsters/67f15a581745002f3dabfb89
 GET  http://localhost:3000/weapons
 
 ### Get weapon by ID
-GET  http://localhost:3000/weapons/67f15ad91745002f3dabfb8a
+GET  http://localhost:3000/weapons/67f161717372f6b9f9e46d50
 
 ### Create weapon
 POST  http://localhost:3000/weapons http/1.1
 Content-Type: application/json
 
 {
-    "name": "Blazing Yirmiya",
-    "elementType": "dragon",
-    "elementValue": 200,
-    "damageType": "slash",
-    "attackValue": 220,
-    "weaponType": "charge blade"
+    "name": "Ajara-Jivaka",
+    "elementType": "blast",
+    "elementValue": 250,
+    "damageType": "impact",
+    "attackValue": 210,
+    "weaponType": "hunting horn"
 }
 
 ### Update weapon
-PUT http://localhost:3000/weapons/67f15adf1745002f3dabfb8b
+PUT http://localhost:3000/weapons/67f161747372f6b9f9e46d51
 Content-Type: application/json
 
 {
-    "name": "Rathian",
-    "elementWeakness": "dragon",
-    "weakSpot": "head",
-    "damageTypeWeak": "impact",
-    "type": "Flying Wyvern"
+    "name": "Poison Blade II",
+    "elementType": "poison",
+    "elementValue": 290,
+    "damageType": "slash",
+    "attackValue": 200,
+    "weaponType": "charge blade"
 }
 
 ### Delete a weapon
-DELETE http://localhost:3000/weapons/67f15a581745002f3dabfb89
+DELETE http://localhost:3000/weapons/67f162b6adb83e11159a3135
