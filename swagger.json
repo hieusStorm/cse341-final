@@ -5,7 +5,7 @@
     "description": "Builds for Monster Hunter Wilds Api",
     "version": "1.0.0"
   },
-  "host": "https://cse341-final-s2pl.onrender.com",
+  "host": "cse341-final-s2pl.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
