@@ -5,9 +5,10 @@
     "description": "Builds for Monster Hunter Wilds Api",
     "version": "1.0.0"
   },
-  "host": "cse341-final-s2pl.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
@@ -191,9 +192,6 @@
       "get": {
         "tags": [],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -216,16 +214,22 @@
                 "name": {
                   "example": "any"
                 },
-                "elementWeakness": {
+                "headPiece": {
                   "example": "any"
                 },
-                "weakSpot": {
+                "bodyPiece": {
                   "example": "any"
                 },
-                "damageTypeWeak": {
+                "armPiece": {
                   "example": "any"
                 },
-                "type": {
+                "legPiece": {
+                  "example": "any"
+                },
+                "weapon": {
+                  "example": "any"
+                },
+                "decorations": {
                   "example": "any"
                 }
               }
@@ -249,9 +253,6 @@
       "get": {
         "tags": [],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -288,16 +289,22 @@
                 "name": {
                   "example": "any"
                 },
-                "elementWeakness": {
+                "headPiece": {
                   "example": "any"
                 },
-                "weakSpot": {
+                "bodyPiece": {
                   "example": "any"
                 },
-                "damageTypeWeak": {
+                "armPiece": {
                   "example": "any"
                 },
-                "type": {
+                "legPiece": {
+                  "example": "any"
+                },
+                "weapon": {
+                  "example": "any"
+                },
+                "decorations": {
                   "example": "any"
                 }
               }
@@ -505,7 +512,7 @@
         }
       }
     },
-    "/users/": {
+    "/skills/": {
       "get": {
         "tags": [],
         "description": "",
@@ -534,16 +541,10 @@
                 "name": {
                   "example": "any"
                 },
-                "elementWeakness": {
+                "effect": {
                   "example": "any"
                 },
-                "weakSpot": {
-                  "example": "any"
-                },
-                "damageTypeWeak": {
-                  "example": "any"
-                },
-                "type": {
+                "levelCap": {
                   "example": "any"
                 }
               }
@@ -563,7 +564,7 @@
         }
       }
     },
-    "/users/{id}": {
+    "/skills/{id}": {
       "get": {
         "tags": [],
         "description": "",
@@ -606,10 +607,10 @@
                 "name": {
                   "example": "any"
                 },
-                "elementWeakness": {
+                "effect": {
                   "example": "any"
                 },
-                "weakSpot": {
+                "levelCap": {
                   "example": "any"
                 },
                 "damageTypeWeak": {

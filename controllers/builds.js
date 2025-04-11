@@ -7,7 +7,7 @@ const getAll = async (req, res) => {
     //#swagger.tags['Builds']
     const result = await mongodb.getDb().db().collection('builds').find();
     result.toArray().then((builds) => {
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-legPiece', 'application/json');
         res.status(200).json(builds);
     }).catch((err) => {
         res.status(400).json({message: err});
@@ -22,7 +22,7 @@ const getSingle = async (req, res) => {
     const buildId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('builds').find({_id: buildId});
     result.toArray().then(build => {
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-legPiece', 'application/json');
         res.status(200).json(build[0]);
     }).catch((err)=> res.status(400).json({message: err}));
 };
@@ -32,10 +32,12 @@ const createBuild = async (req, res) => {
 
     const build = {
         name: req.body.name,
-        elementWeakness: req.body.elementWeakness,
-        weakSpot: req.body.weakSpot,
-        damageTypeWeak: req.body.damageTypeWeak,
-        type: req.body.type
+        headPiece: req.body.headPiece,
+        bodyPiece: req.body.bodyPiece,
+        armPiece: req.body.armPiece,
+        legPiece: req.body.legPiece,
+        weapon: req.body.weapon,
+        decorations: req.body.decorations
     };
 
     const response = await mongodb.getDb().db().collection('builds').insertOne(build);
@@ -58,10 +60,12 @@ const updateBuild = async (req, res) => {
 
     const build = {
         name: req.body.name,
-        elementWeakness: req.body.elementWeakness,
-        weakSpot: req.body.weakSpot,
-        damageTypeWeak: req.body.damageTypeWeak,
-        type: req.body.type
+        headPiece: req.body.headPiece,
+        bodyPiece: req.body.bodyPiece,
+        armPiece: req.body.armPiece,
+        legPiece: req.body.legPiece,
+        weapon: req.body.weapon,
+        decorations: req.body.decorations
     };
 
     const response = await mongodb.getDb().db().collection('builds').replaceOne({_id: buildId}, build);

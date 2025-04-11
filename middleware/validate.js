@@ -33,7 +33,7 @@ const saveWeapon = (req, res, next) => {
         elementValue: "required|integer",
         damageType: {inclusion: damageTypes},
         attackValue: "required|integer",
-        weaponType: {inclusion: weaponTypes},
+        weaponType: {inclusion: weaponTypes}
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if(!status) {
@@ -52,10 +52,12 @@ const saveBuild = (req, res, next) => {
     const elements = ['fire', 'water', 'thunder', 'ice'];
     const validationRule = {
         name: "required|string",
-        elementWeakness: {inclusion: elements},
-        weakSpot: "required|string",
-        damageTypeWeak: "required|string",
-        type: "required|string"
+        headPiece: {inclusion: elements},
+        bodyPiece: "required|string",
+        armPiece: "required|string",
+        legPiece: "required|string",
+        weapon: "required|string",
+        decorations: "required|string"
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if(!status) {
@@ -69,14 +71,11 @@ const saveBuild = (req, res, next) => {
         }
     });
 };
-const saveUser = (req, res, next) => {
-    const elements = ['fire', 'water', 'thunder', 'ice'];
+const saveSkill = (req, res, next) => {
     const validationRule = {
         name: "required|string",
-        elementWeakness: {inclusion: elements},
-        weakSpot: "required|string",
-        damageTypeWeak: "required|string",
-        type: "required|string"
+        effect: "required|string",
+        levelCap: "required|integer"
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if(!status) {
@@ -95,5 +94,5 @@ module.exports = {
     saveMonster,
     saveWeapon,
     saveBuild,
-    saveUser
+    saveSkill
 }
