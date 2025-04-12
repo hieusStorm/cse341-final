@@ -49,13 +49,14 @@ const saveWeapon = (req, res, next) => {
 };
 // Placeholders
 const saveBuild = (req, res, next) => {
-    const elements = ['fire', 'water', 'thunder', 'ice'];
     const validationRule = {
         name: "required|string",
-        headPiece: {inclusion: elements},
+        headPiece: "required|string",
         bodyPiece: "required|string",
         armPiece: "required|string",
+        waistPiece: "required|string",
         legPiece: "required|string",
+        charm: "required|charm",
         weapon: "required|string",
         decorations: "required|string"
     };
@@ -74,8 +75,8 @@ const saveBuild = (req, res, next) => {
 const saveSkill = (req, res, next) => {
     const validationRule = {
         name: "required|string",
-        effect: "required|string",
-        levelCap: "required|integer"
+        levelCap: "required|integer",
+        effect: "required|string"
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if(!status) {

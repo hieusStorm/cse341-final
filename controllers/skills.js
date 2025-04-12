@@ -34,8 +34,8 @@ const createSkill = async (req, res) => {
 
     const skill = {
         name: req.body.name,
-        effect: req.body.effect,
-        levelCap: req.body.levelCap
+        levelCap: req.body.levelCap,
+        effect: req.body.effect
     };
 
     const response = await mongodb.getDb().db().collection('skills').insertOne(skill);
@@ -58,10 +58,8 @@ const updateSkill = async (req, res) => {
 
     const skill = {
         name: req.body.name,
-        effect: req.body.effect,
         levelCap: req.body.levelCap,
-        damageTypeWeak: req.body.damageTypeWeak,
-        type: req.body.type
+        effect: req.body.effect
     };
 
     const response = await mongodb.getDb().db().collection('skills').replaceOne({_id: skillId}, skill);
