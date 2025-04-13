@@ -51,6 +51,6 @@ mongoDb.initDb((err)=> {
     if(err) {
         console.error(err);
     } else {
-        app.listen(port, () => console.log(`Datadase Listening and node running on port: ${port}`));
+        app.listen(port, () => console.log(`Database Listening and node running on port: ${port}`));
     }
 });
