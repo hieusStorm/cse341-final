@@ -56,7 +56,7 @@ const saveBuild = (req, res, next) => {
         armPiece: "required|string",
         waistPiece: "required|string",
         legPiece: "required|string",
-        charm: "required|charm",
+        charm: "required|string",
         weapon: "required|string",
         decorations: "required|string"
     };
