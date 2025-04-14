@@ -37,6 +37,7 @@ const createBuild = async (req, res) => {
         armPiece: req.body.armPiece,
         waistPiece: req.body.waistPiece,
         legPiece: req.body.legPiece,
+        charm: req.body.charm,
         weapon: req.body.weapon,
         decorations: req.body.decorations
     };

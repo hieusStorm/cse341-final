@@ -267,6 +267,9 @@
                 "legPiece": {
                   "example": "any"
                 },
+                "charm": {
+                  "example": "any"
+                },
                 "weapon": {
                   "example": "any"
                 },
